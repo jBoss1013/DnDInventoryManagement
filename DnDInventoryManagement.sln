@@ -11,6 +11,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DnDIMData", "Database1\DnDI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDIMDesktopUI", "DnDIMDesktopUI\DnDIMDesktopUI.csproj", "{843DA822-66B5-4A98-B385-3BBE62D3ABE8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{281953A7-C8FE-42C7-8126-FBAF021FC1A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{3A2FAA3F-B827-4B8A-B8C2-5FC748DD940D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C0224767-856D-4B73-B79A-919ECAFA59BD} = {A274C4EC-AD4F-453F-85A2-DBCAE45C7C36}
+		{6C03277F-DF09-47BB-A0F5-CC293C4D0B48} = {3A2FAA3F-B827-4B8A-B8C2-5FC748DD940D}
+		{843DA822-66B5-4A98-B385-3BBE62D3ABE8} = {281953A7-C8FE-42C7-8126-FBAF021FC1A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FFC62E8-EDB5-4D92-8A7A-8C3F2AA72E08}
