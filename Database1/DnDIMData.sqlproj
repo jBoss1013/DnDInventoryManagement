@@ -66,4 +66,9 @@
   <ItemGroup>
     <None Include="PublishLocations\DnDIMData.publish.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tabes\DndUser.sql" />
+    <Build Include="dbo\Tabes\Items.sql" />
+    <Build Include="dbo\Tabes\CharacterInventory.sql" />
+  </ItemGroup>
 </Project>
