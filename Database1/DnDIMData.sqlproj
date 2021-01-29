@@ -70,5 +70,6 @@
     <Build Include="dbo\Tabes\DndUser.sql" />
     <Build Include="dbo\Tabes\Items.sql" />
     <Build Include="dbo\Tabes\CharacterInventory.sql" />
+    <Build Include="dbo\Stored Procedures\spUserLookup.sql" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDIMDataManager", "DnDIMDataManager\DnDIMDataManager.csproj", "{C0224767-856D-4B73-B79A-919ECAFA59BD}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{281953A7-C8FE-42C7-8126-FBAF021FC1A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{3A2FAA3F-B827-4B8A-B8C2-5FC748DD940D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDIMDataManager.Library", "DnDIMDataManager.Library\DnDIMDataManager.Library.csproj", "{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{843DA822-66B5-4A98-B385-3BBE62D3ABE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{843DA822-66B5-4A98-B385-3BBE62D3ABE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{843DA822-66B5-4A98-B385-3BBE62D3ABE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{C0224767-856D-4B73-B79A-919ECAFA59BD} = {A274C4EC-AD4F-453F-85A2-DBCAE45C7C36}
 		{6C03277F-DF09-47BB-A0F5-CC293C4D0B48} = {3A2FAA3F-B827-4B8A-B8C2-5FC748DD940D}
 		{843DA822-66B5-4A98-B385-3BBE62D3ABE8} = {281953A7-C8FE-42C7-8126-FBAF021FC1A8}
+		{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544} = {A274C4EC-AD4F-453F-85A2-DBCAE45C7C36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FFC62E8-EDB5-4D92-8A7A-8C3F2AA72E08}
