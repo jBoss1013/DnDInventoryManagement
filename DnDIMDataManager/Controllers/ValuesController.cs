@@ -10,10 +10,7 @@ namespace DnDIMDataManager.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController
-    {  //TODO remember to delete this
-        //Username: jrjlboss@outlook.com
-        //Pasword: JBoss12345
-
+    {
         // GET api/values
         public IEnumerable<string> Get()
         {  //TODO test this and see if it can be deleted

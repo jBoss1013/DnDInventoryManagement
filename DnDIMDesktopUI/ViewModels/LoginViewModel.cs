@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using DnDIMDesktopUI.Helpers;
+using DnDIMDesktopUI.Helpers.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 namespace DnDIMDesktopUI.ViewModels
 {
 	public class LoginViewModel : Screen
-	{
-		private string _userName;
-		private string _password;
+	{	//TODO remove this 
+		private string _userName = "jrjlboss@outlook.com";
+		private string _password = "JBoss12345";
 		private IAPIHelper _apiHelper;
 
 		public LoginViewModel(IAPIHelper apiHelper)
@@ -90,12 +91,13 @@ namespace DnDIMDesktopUI.ViewModels
 			{
 				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
+				await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
 			}
 			catch (Exception ex)
 			{
 				if(ex.Message == "Bad Request")
 				{
-					ErrorMessage = "User Name or Password is Invalid";
+					ErrorMessage = "Username or Password is incorrect";
 				}
 				else
 				{

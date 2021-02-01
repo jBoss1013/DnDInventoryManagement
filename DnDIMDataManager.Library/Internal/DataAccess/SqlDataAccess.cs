@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace DnDIMDataManager.Library.Internal.DataAcess
 {
-    public class SqlDataAccess
+    //Internal so that nothing outside of the library can access it
+    internal class SqlDataAccess
     {
         public string GetConnectionString (string name)
         {

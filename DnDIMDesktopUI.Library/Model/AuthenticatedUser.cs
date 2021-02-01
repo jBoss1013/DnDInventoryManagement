@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DnDIMDesktopUI.Models
+namespace DnDIMDesktopUI.Library.Model
 {
     public class AuthenticatedUser
     {

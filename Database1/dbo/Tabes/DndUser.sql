@@ -1,7 +1,6 @@
-﻿CREATE TABLE [dbo].[DndUser]
+﻿CREATE TABLE [dbo].[DnDUser]
 (
     [Id] NVARCHAR(128) NOT NULL PRIMARY KEY, 
-    [FirstName] NVARCHAR(50) NULL, 
-    [LastName] NVARCHAR(50) NULL, 
-    [EmailAddress] NVARCHAR(256) NULL
+    [CharacterName] NVARCHAR(50) NOT NULL
+    
 )

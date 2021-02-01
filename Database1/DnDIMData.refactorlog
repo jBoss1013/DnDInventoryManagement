@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="49f3079c-064f-4a66-bc14-b6414ddfd7ac" ChangeDateTime="02/01/2021 19:08:15">
+    <Property Name="ElementName" Value="[dbo].[DndUser].[FirstName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DndUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CharacterName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35c67fa0-de21-4c89-b004-dcca365c03a3" ChangeDateTime="02/01/2021 19:37:05">
+    <Property Name="ElementName" Value="[dbo].[CharacterInventory].[CharacterId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CharacterInventory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[Characterid]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8a66a21e-a6c8-4e1c-a321-421aa4790212" ChangeDateTime="02/01/2021 19:38:22">
+    <Property Name="ElementName" Value="[dbo].[CharacterInventory].[Characterid]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CharacterInventory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CharacterId" />
+  </Operation>
+</Operations>

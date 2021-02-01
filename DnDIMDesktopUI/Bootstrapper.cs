@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using DnDIMDesktopUI.Helpers;
+using DnDIMDesktopUI.Helpers.API;
+using DnDIMDesktopUI.Library.Model;
 using DnDIMDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,6 +32,7 @@ namespace DnDIMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
 
 
