@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DnDIMDesktopUI.EventModel;
 using DnDIMDesktopUI.Helpers;
 using DnDIMDesktopUI.Helpers.API;
 using System;
@@ -14,10 +15,12 @@ namespace DnDIMDesktopUI.ViewModels
 		private string _userName = "jrjlboss@outlook.com";
 		private string _password = "JBoss12345";
 		private IAPIHelper _apiHelper;
+		IEventAggregator _events;
 
-		public LoginViewModel(IAPIHelper apiHelper)
+		public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
 		{
 			_apiHelper = apiHelper;
+			_events = events;
 		}
 		public string UserName
 		{
@@ -92,6 +95,8 @@ namespace DnDIMDesktopUI.ViewModels
 				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
 				await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
+				_events.PublishOnUIThread(new LogOnEvent());
 			}
 			catch (Exception ex)
 			{

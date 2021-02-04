@@ -71,6 +71,8 @@
     <Build Include="dbo\Tabes\Items.sql" />
     <Build Include="dbo\Tabes\CharacterInventory.sql" />
     <Build Include="dbo\Stored Procedures\spUserLookup.sql" />
+    <Build Include="dbo\Stored Procedures\spCharacterIventoryLookUp.sql" />
+    <Build Include="dbo\Stored Procedures\spItem_GetAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DnDIMData.refactorlog" />
