@@ -7,13 +7,15 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 
 namespace DnDIMDataManager.Controllers
-{
+{   //TODO May delete this class 
     [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
-        {  //TODO May delete this class 
+        {  
+
+            //TODO can get ID and see it, may be useful for sending id to dbo - needs using statement >aspNet.Identity
             string useID = RequestContext.Principal.Identity.GetUserId();
                
             return new string[] { "value1", "value2" };

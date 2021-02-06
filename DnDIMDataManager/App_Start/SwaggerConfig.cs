@@ -16,7 +16,8 @@ namespace DnDIMDataManager
 
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
-                    {
+
+                    {   //New Filters for OAuth
                         c.DocumentFilter<AuthorizeTokenOp>();
                         c.OperationFilter<AuthOpFilter>();
 

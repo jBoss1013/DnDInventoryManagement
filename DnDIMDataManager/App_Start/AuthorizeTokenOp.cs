@@ -9,6 +9,16 @@ namespace DnDIMDataManager.App_Start
 {
     public class AuthorizeTokenOp : IDocumentFilter
     {
+        /// <summary>
+        /// Creates a new path for swagger so that a log on screen is available
+        /// </summary>
+        /// <param name="swaggerDoc"></param>
+        /// <param name="schemaRegistry"></param>
+        /// <param name="apiExplorer"></param>
+        /// 
+
+        //Got solution from:
+        //Https://stackoverflow.com/questions/51117655/how-to-use-swagger-in-asp-net-webapi-2-0-with-token-based-authentication
         public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
         {
             swaggerDoc.paths.Add("/token", new PathItem
