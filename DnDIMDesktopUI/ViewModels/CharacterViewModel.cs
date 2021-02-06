@@ -17,7 +17,6 @@ namespace DnDIMDesktopUI.ViewModels
 			get { return _characterName; }
 			set 
 			{ 
-				//Look into using ILoggedInUserModel to capture name
 				_characterName = value;
 				NotifyOfPropertyChange(() => CharacterName);
 			}

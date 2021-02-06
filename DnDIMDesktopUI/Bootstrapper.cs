@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using DnDIMDesktopUI.Helpers;
 using DnDIMDesktopUI.Helpers.API;
+using DnDIMDesktopUI.Library.API;
 using DnDIMDesktopUI.Library.Model;
 using DnDIMDesktopUI.ViewModels;
 using System;
@@ -27,7 +28,8 @@ namespace DnDIMDesktopUI
         }
         protected override void Configure()
         {
-            _container.Instance(_container);
+            _container.Instance(_container)
+                .PerRequest<IItemEndPoint, ItemEndPoint>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()

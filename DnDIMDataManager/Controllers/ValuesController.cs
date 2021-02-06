@@ -13,7 +13,7 @@ namespace DnDIMDataManager.Controllers
     {
         // GET api/values
         public IEnumerable<string> Get()
-        {  //TODO test this and see if it can be deleted
+        {  //TODO May delete this class 
             string useID = RequestContext.Principal.Identity.GetUserId();
                
             return new string[] { "value1", "value2" };

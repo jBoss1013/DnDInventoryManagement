@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using DnDIMDesktopUI.Library.API;
+using DnDIMDesktopUI.Library.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,18 +10,54 @@ using System.Threading.Tasks;
 
 namespace DnDIMDesktopUI.ViewModels
 {
-    class ItemsViewModel :Screen
+	public class ItemsViewModel : Screen
     {
-		private BindingList<string> _itemList;
+		IItemEndPoint _itemEndPoint;
+		public ItemsViewModel(IItemEndPoint itemEndPoint)
+		{
+			_itemEndPoint = itemEndPoint;
+		}
 
-		public BindingList<string> ItemList
+		protected override async void OnViewLoaded(object view)
+		{
+			base.OnViewLoaded(view);
+			await LoadItems();
+		}
+		
+
+		private async Task LoadItems()
+		{
+			var itemsList = await _itemEndPoint.GetAll();
+
+			ItemList = new BindingList<ItemsModel>(itemsList);
+		}
+
+		private BindingList<ItemsModel> _itemList;
+
+		public BindingList<ItemsModel> ItemList
 		{
 			get { return _itemList; }
 			set 
 			{
-				_itemList = value; 
+				_itemList = value;
+				NotifyOfPropertyChange(() => ItemList);
+				
 			}
 		}
+		private ItemsModel _selectedItem;
+
+		public ItemsModel SelectedItem
+		{
+			get { return _selectedItem; }
+			set 
+			{ 
+				_selectedItem = value;
+				NotifyOfPropertyChange(() => SelectedItem);
+				NotifyOfPropertyChange(() => CanAddToInventory);
+				NotifyOfPropertyChange(() => CanDeleteItem);
+			}
+		}
+
 
 		private string _itemListDescriptionText;
 
@@ -27,8 +65,11 @@ namespace DnDIMDesktopUI.ViewModels
 		{
 			get { return _itemListDescriptionText; }
 			set 
-			{ 
-				_itemListDescriptionText = value; 
+			{	
+				_itemListDescriptionText = value;
+				NotifyOfPropertyChange(() => SelectedItem);
+				NotifyOfPropertyChange(() => ItemListDescriptionText);
+
 			}
 		}
 
@@ -39,11 +80,50 @@ namespace DnDIMDesktopUI.ViewModels
 			get { return _addItemQuantity; }
 			set 
 			{ 
-				_addItemQuantity = value; 
+				
+				_addItemQuantity = value;
+				NotifyOfPropertyChange(() => AddItemQuantity);
+				NotifyOfPropertyChange(() => CanAddToInventory);
 			}
 		}
 
+		public bool CanAddToInventory 
+		{
+			get 
+			{
+				
+				bool output = false;
+				if (SelectedItem!= null && AddItemQuantity >0)
+				{
+					output = true;
+				}
+				return output;
+			} 
+		}
 
+		public bool CanDeleteItem
+
+		{
+			get 
+			{
+				bool output = false;
+				if (SelectedItem!=null)
+				{
+					output = true;
+				}
+				return output;
+			}
+		}
+
+		public void DeleteItem()
+		{
+
+		}
+
+		public void AddToInventory()
+		{
+			
+		}
 
 	}
 }

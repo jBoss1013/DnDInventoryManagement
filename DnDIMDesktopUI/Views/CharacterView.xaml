@@ -52,6 +52,7 @@
             <TextBlock>Quantity</TextBlock>
             <TextBox x:Name="ItemQuantity" MinWidth="100"/>
             <Button x:Name="RemoveItem" Content="Remove Item" Margin="0 5 5 5"/>
+            <Button x:Name="AddItem" Content="Add Item" Margin="0 5 5 5"/>
         </StackPanel>
 
         

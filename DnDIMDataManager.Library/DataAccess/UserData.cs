@@ -12,7 +12,7 @@ namespace DnDIMDataManager.Library.DataAccess
     {
         public List<UserModel> GetUserById(string Id)
         {
-            //TODO look inot Autofac for DInejc
+            //TODO look into Autofac for Dependancy Inejection
             SqlDataAccess sql = new SqlDataAccess();
 
             var p = new { Id = Id };

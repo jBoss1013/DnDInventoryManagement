@@ -5,16 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DnDIMDesktopUI.Views"
         mc:Ignorable="d"
-        Title="ShellView" SizeToContent="WidthAndHeight" MinHeight="500" MinWidth="850" >
+        Title="DnD Inventory Manager" SizeToContent="WidthAndHeight" MinHeight="500" MinWidth="850" >
     <DockPanel>
         <Menu DockPanel.Dock="Top" FontSize="18">
             <MenuItem Header="_File">
-                <MenuItem x:Name="LoginScreen" Header="_Logout"/>
-                <MenuItem x:Name="ExitAplication" Header="E_xit"/>
+                <MenuItem x:Name="ExitApplication" Header="E_xit"/>
             </MenuItem>
-            <MenuItem x:Name="CharacterTab" Header="Character Inventory"> </MenuItem>
-            <MenuItem x:Name="ItemTab" Header="Item List"></MenuItem>
-            <MenuItem x:Name="CreateItemTab" Header="Create Item"></MenuItem>
+            <MenuItem x:Name="CharacterTab" Header="Character Inventory"
+               Visibility="{Binding IsCharacterTabVisible, Converter={StaticResource ResourceKey=BooleanToVisibilityConverter}}">
+            </MenuItem>
+            <MenuItem x:Name="ItemTab" Header="Item List"
+              Visibility="{Binding IsItemTabVisible, Converter={StaticResource ResourceKey=BooleanToVisibilityConverter}}">
+                
+            </MenuItem>
+            <MenuItem x:Name="CreateItemTab" Header="Create Item"
+             Visibility="{Binding IsCreateItemTabVisible, Converter={StaticResource ResourceKey=BooleanToVisibilityConverter}}">
+                
+            </MenuItem>
+            <MenuItem x:Name="LogOut" Header="_Log Out" 
+             Visibility="{Binding IsLogOutVisible, Converter={StaticResource ResourceKey=BooleanToVisibilityConverter}}"/>
         </Menu>
         <Grid>
             <ContentControl x:Name="ActiveItem" Margin="5"/>

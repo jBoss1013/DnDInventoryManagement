@@ -9,6 +9,7 @@ using System.Windows.Controls;
 
 namespace DnDIMDesktopUI.Helpers
 {
+    //Obtained from https://stackoverflow.com/questions/30631522/caliburn-micro-support-for-passwordbox 
     public static class PasswordBoxHelper
     {
         public static readonly DependencyProperty BoundPasswordProperty =

@@ -34,27 +34,38 @@
 
         <ListBox x:Name="ItemList" Grid.Row="2" 
                  Grid.Column="0" Grid.ColumnSpan="2" MinHeight="150" MinWidth="550"
-                  Margin="5 0 0 0"/>
+                 MaxHeight="150" MaxWidth="550"
+                  Margin="5 0 0 0" SelectedItem="{Binding SelectedItem}" > 
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ItemName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                     Margin="5 10 0 0 "> 
             Description
         </TextBlock>
 
-        <TextBlock x:Name="ItemListDescriptionText" Grid.Row="4"
+        <Border BorderBrush="Black" BorderThickness=".5" Grid.Row="4"
                     Grid.Column="0" Grid.ColumnSpan="2" MinHeight="150" MinWidth="550"
-                   Margin="5 0 0 0 "> 
-            Description text
-        </TextBlock>
+                   MaxHeight="150" MaxWidth="550" Margin="5 0 0 0 ">
+            <ScrollViewer>
+                <TextBlock x:Name="ItemListDescriptionText" DataContext="{Binding SelectedItem}" Text="{Binding ItemDescription}" TextWrapping="Wrap">
+
+                </TextBlock>
+            </ScrollViewer>
+        </Border>
 
         <!--Column 3-->
         <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="2" 
                     Grid.RowSpan="2" Margin="25 0 0 0 " >
             <TextBlock>Quantity</TextBlock>
             <TextBox x:Name="AddItemQuantity" MinWidth="100"/>
-            <Button x:Name="AddToCharacter" Content="Add to Character" Margin="0 5 5 0"/>
-            <Button x:Name="DeleteItem" Content="Delete an Item" Margin="0 5 5 5"/>
-            <Button x:Name="CreateItem" Content="Create an Item" />
+            <Button x:Name="AddToInventory" Content="Add to Inventory" Margin="0 5 5 0"/>
+            <Button x:Name="DeleteItem" Content="Delete an Item" Margin="0 5 5 0"/>
+            <Button x:Name="CreateItem" Content="Create an Item" Margin="0 5 5 0"/>
             
         </StackPanel>
 

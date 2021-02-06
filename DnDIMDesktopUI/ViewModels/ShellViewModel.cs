@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using DnDIMDesktopUI.EventModel;
+using DnDIMDesktopUI.Library.Model;
 
 namespace DnDIMDesktopUI.ViewModels
 {
@@ -13,31 +14,99 @@ namespace DnDIMDesktopUI.ViewModels
         
         private IEventAggregator _events;
         private CharacterViewModel _characterVM;
-        private SimpleContainer _container;
-        public ShellViewModel( IEventAggregator events, CharacterViewModel characterVM,
-            SimpleContainer container)
+        private ILoggedInUserModel _user;
+
+
+        public ShellViewModel( IEventAggregator events, CharacterViewModel characterVM, ILoggedInUserModel user)
 
         {
-            
             _events = events;
             _characterVM = characterVM;
+            _user = user;
             _events.Subscribe(this);
-            _container = container;
             
             //This overrides current instaance of LoginViewModel with empty LoginViewModel
             //This ensures that we do not accidently capture user and password data
             //Also clears the login form if it reactivates
-            ActivateItem(_container.GetInstance<LoginViewModel>());
+            ActivateItem(IoC.Get<LoginViewModel>());
+        }
+        
+        public bool IsLogOutVisible 
+        {
+            get
+            {
+                return IsLoggedIn();
+            } 
+        }
+
+        public bool IsCharacterTabVisible
+        {
+            get
+            {
+                return IsLoggedIn();
+            }  
+        }
+
+        public bool IsItemTabVisible
+        {
+            get
+            {
+                return IsLoggedIn();
+            }
+        }
+
+        public bool IsCreateItemTabVisible
+        {
+            get
+            {
+                return IsLoggedIn();
+            }
+        }
+
+
+        public void ExitApplication()
+        {
+            TryClose();
+        }
+
+        public void LogOut()
+        {
+            _user.LogOffUser();
+            ActivateItem(IoC.Get<LoginViewModel>());
+            NotifyOfPropertyChange(() => IsLogOutVisible);
+            NotifyOfPropertyChange(() => IsCharacterTabVisible);
+            NotifyOfPropertyChange(() => IsCreateItemTabVisible);
+            NotifyOfPropertyChange(() => IsItemTabVisible);
         }
 
         public void Handle(LogOnEvent message)
         {
             ActivateItem(_characterVM);
+            NotifyOfPropertyChange(() => IsLogOutVisible);
+            NotifyOfPropertyChange(() => IsCharacterTabVisible);
+            NotifyOfPropertyChange(() => IsCreateItemTabVisible);
+            NotifyOfPropertyChange(() => IsItemTabVisible);
+        }
+
+        public void ItemTab()
+        {
+            
+            ActivateItem(IoC.Get<ItemsViewModel>());
         }
 
         public void CharacterTab()
         {
+            ActivateItem(IoC.Get<CharacterViewModel>());
+        }
 
+        private bool IsLoggedIn()
+        {
+            bool output = false;
+            if (string.IsNullOrWhiteSpace(_user.Token) == false)
+            {
+                output = true;
+            }
+            return output;
         }
     }
 }
