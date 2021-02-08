@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DnDIMDesktopUI.EventModel
-{
+{   
+    /// <summary>
+    /// This is an empty class for Events and differentates from other class instances
+    /// It is supposed to be blank
+    /// </summary>
     public class LogOnEvent
     {
-        //Instance for calling events for logging in
-        //differentates from other class instances
-        //this is why it is blank
     }
 }

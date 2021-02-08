@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 namespace DnDIMDataManager.Library.Internal.DataAcess
 {
     //Internal so that nothing outside of the library can access it
+    /// <summary>
+    /// Access SQL server and sets the load and save methods for data trasmissions
+    /// </summary>
     internal class SqlDataAccess
     {
         public string GetConnectionString (string name)

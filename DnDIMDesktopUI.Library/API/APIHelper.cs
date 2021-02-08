@@ -28,7 +28,7 @@ namespace DnDIMDesktopUI.Helpers.API
         }
 
         private void InitializeClient()
-        {   //TODO to readme: look for app setting and replace with whatever setting you need
+        {   //TODO: Notice, place localhost info in AppSettings for api to work
             string api = ConfigurationManager.AppSettings["api"];
             _apiClient = new HttpClient();
             _apiClient.BaseAddress = new Uri(api);
@@ -36,6 +36,12 @@ namespace DnDIMDesktopUI.Helpers.API
             _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        /// <summary>
+        /// Passes username, password, and captures token 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public async Task<AuthenticatedUser> Authenticate(string userName, string password)
         {
             var data = new FormUrlEncodedContent(new[]

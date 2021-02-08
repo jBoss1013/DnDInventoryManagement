@@ -11,11 +11,10 @@ using System.Threading.Tasks;
 namespace DnDIMDesktopUI.ViewModels
 {
 	public class LoginViewModel : Screen
-	{   //TODO remove this 
-		//private string _username = "jrjlboss@outlook.com";
-		//private string _password = "jboss12345";
-		private string _userName = "jrjlboss@outlook.com";
-		private string _password = "JBoss12345";
+	{ 
+		private string _userName = "";
+		private string _password = "";
+		
 		private IAPIHelper _apiHelper;
 		IEventAggregator _events;
 

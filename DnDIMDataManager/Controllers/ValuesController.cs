@@ -7,7 +7,7 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 
 namespace DnDIMDataManager.Controllers
-{   //TODO May delete this class 
+{   //TODO Delete Class when references are no longer needed
     [Authorize]
     public class ValuesController : ApiController
     {
@@ -15,7 +15,7 @@ namespace DnDIMDataManager.Controllers
         public IEnumerable<string> Get()
         {  
 
-            //TODO can get ID and see it, may be useful for sending id to dbo - needs using statement >aspNet.Identity
+            //TODO use this as reference 
             string useID = RequestContext.Principal.Identity.GetUserId();
                
             return new string[] { "value1", "value2" };
