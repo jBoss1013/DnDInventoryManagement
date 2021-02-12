@@ -9,7 +9,13 @@ using System.Windows.Controls;
 
 namespace DnDIMDesktopUI.Helpers
 {
-    //Obtained from https://stackoverflow.com/questions/30631522/caliburn-micro-support-for-passwordbox 
+    
+   //Obtained from https://stackoverflow.com/questions/30631522/caliburn-micro-support-for-passwordbox 
+   /// <summary>
+   /// Caliburn and micro didn't seem to support passwordbox and would not catch the event of the passwordblock change
+   /// This solution seemed to be the best option but can be reviewed at a later time if caliburn and micro is 
+   /// still going to be used in the future of this app.
+   /// </summary>
     public static class PasswordBoxHelper
     {
         public static readonly DependencyProperty BoundPasswordProperty =

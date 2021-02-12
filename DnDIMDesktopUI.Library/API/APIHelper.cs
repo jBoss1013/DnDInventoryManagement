@@ -26,7 +26,9 @@ namespace DnDIMDesktopUI.Helpers.API
                 return _apiClient;
             }
         }
-
+        /// <summary>
+        /// makes one API call for the instance of the program
+        /// </summary>
         private void InitializeClient()
         {   //TODO: Notice, place localhost info in AppSettings for api to work
             string api = ConfigurationManager.AppSettings["api"];
@@ -37,11 +39,11 @@ namespace DnDIMDesktopUI.Helpers.API
         }
 
         /// <summary>
-        /// Passes username, password, and captures token 
+        /// Passes username and password to be authenticated by API token call
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        /// <returns></returns>
+        /// <returns>On success: Type of AuthenticatedUser Model with token data for access to API Calls</returns>
         public async Task<AuthenticatedUser> Authenticate(string userName, string password)
         {
             var data = new FormUrlEncodedContent(new[]
@@ -78,7 +80,7 @@ namespace DnDIMDesktopUI.Helpers.API
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsAsync<LoggedInUserModel>();
-                    _loggedInUser.CharacterName = result.CharacterName;
+                    _loggedInUser.UserName = result.UserName;
                     _loggedInUser.Id = result.Id;
                     _loggedInUser.Token = token;
                 }

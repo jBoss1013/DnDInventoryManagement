@@ -10,13 +10,13 @@ namespace DnDIMDesktopUI.Library.Model
     {
         public string Token { get; set; }
         public string Id { get; set; }
-        public string CharacterName { get; set; }
+        public string UserName { get; set; }
 
         public void LogOffUser()
         {
             Token = "";
             Id = "";
-            CharacterName = "";
+            UserName = "";
         }
     }
 }

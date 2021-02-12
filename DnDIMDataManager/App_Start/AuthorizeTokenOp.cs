@@ -10,7 +10,7 @@ namespace DnDIMDataManager.App_Start
     public class AuthorizeTokenOp : IDocumentFilter
     {
         /// <summary>
-        /// Creates a new path for swagger so that a log on screen is available
+        /// Creates a new path for swagger so that a token can be captured and use auth operations
         /// </summary>
         /// <param name="swaggerDoc"></param>
         /// <param name="schemaRegistry"></param>

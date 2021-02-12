@@ -2,7 +2,7 @@
 {
     public interface ILoggedInUserModel
     {
-        string CharacterName { get; set; }
+        string UserName { get; set; }
         string Id { get; set; }
         string Token { get; set; }
         

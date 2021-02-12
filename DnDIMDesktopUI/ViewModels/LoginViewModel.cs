@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 namespace DnDIMDesktopUI.ViewModels
 {
 	public class LoginViewModel : Screen
-	{ 
-		private string _userName = "";
-		private string _password = "";
-		
+	{
+		//TODO remove this 
+		private string _userName = "jrjlboss@outlook.com";
+		private string _password = "JBoss12345";
+
 		private IAPIHelper _apiHelper;
 		IEventAggregator _events;
 
@@ -89,6 +90,10 @@ namespace DnDIMDesktopUI.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Gets UserName and Token for authorized use of API and WPF
+		/// </summary>
+		/// <returns></returns>
 		public async Task LogIn()
 		{
 			try
@@ -109,9 +114,12 @@ namespace DnDIMDesktopUI.ViewModels
 				{
 					ErrorMessage = ex.Message;
 				}
-				 
-	
 			}
+		}
+
+		public void Register()
+		{
+			_events.PublishOnUIThread(new RegisterUserEvent());
 		}
 
 	}

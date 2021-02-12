@@ -73,6 +73,7 @@
     <Build Include="dbo\Stored Procedures\spUserLookup.sql" />
     <Build Include="dbo\Stored Procedures\spCharacterIventoryLookUp.sql" />
     <Build Include="dbo\Stored Procedures\spItem_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spRegisterUser_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DnDIMData.refactorlog" />

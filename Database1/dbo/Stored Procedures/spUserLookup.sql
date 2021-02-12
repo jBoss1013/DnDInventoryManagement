@@ -3,7 +3,7 @@
 AS
 begin
 set nocount on;
-	select Id,CharacterName
+	select Id,UserName
 	from dbo.DnDUser
 	where Id =@Id;
 end

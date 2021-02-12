@@ -36,16 +36,16 @@
         
         <!--Username row-->
         <TextBlock Grid.Row="2" Grid.Column="1" FontSize="24" Margin="0 0 0 10">
-            Character Name:
+            User Name:
         </TextBlock>
-        <TextBox x:Name="CharacterName" Grid.Row="2" Grid.Column="2" MinWidth="250" Margin="10 0 0 10"
+        <TextBox x:Name="UserName" Grid.Row="2" Grid.Column="2" MinWidth="250" Margin="10 0 0 10"
                  FontSize="16" VerticalContentAlignment="Center"/>
 
         <!--Email row-->
         <TextBlock Grid.Row="3" Grid.Column="1" FontSize="24" Margin="0 0 0 10">
             Email:
         </TextBlock>
-        <TextBox x:Name="UserName" Grid.Row="3" Grid.Column="2" MinWidth="250" Margin="10 0 0 10"
+        <TextBox x:Name="Email" Grid.Row="3" Grid.Column="2" MinWidth="250" Margin="10 0 0 10"
                  FontSize="16" VerticalContentAlignment="Center"/>
 
         <!--Password row-->
@@ -62,10 +62,15 @@
         <PasswordBox x:Name="ConfirmPassword" Grid.Row="5" Grid.Column="2" MinWidth="250" Margin="10 0 0 10" 
                      FontSize="16" VerticalContentAlignment="Center"/>
 
-        <!--Login row-->
-        <Button x:Name="Register" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Padding="20 5"
-                HorizontalAlignment="Center" >
+        <!--Button row-->
+        <Button x:Name="Register" Grid.Row="6" Grid.Column="1"  Padding="20 5" Margin="0 20 10 0"
+                HorizontalAlignment="Right" >
             Submit
+        </Button>
+
+        <Button x:Name="Cancel" Grid.Row="6" Grid.Column="2"  Padding="20 5" Margin="10 20 0 0"
+                HorizontalAlignment="Left" >
+            Cancel
         </Button>
     </Grid>
 </UserControl>

@@ -19,6 +19,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
@@ -49,6 +50,12 @@
         <Button x:Name="LogIn" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Padding="20 5"
                 HorizontalAlignment="Center" >
             Log In
+        </Button>
+
+        <!--Register row-->
+        <Button x:Name="Register" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Padding="20 5"
+                HorizontalAlignment="Center" Margin="0 15 0 0">
+            Register
         </Button>
     </Grid>
 </UserControl>

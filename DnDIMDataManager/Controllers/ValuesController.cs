@@ -14,9 +14,6 @@ namespace DnDIMDataManager.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {  
-
-            //TODO use this as reference 
-            string useID = RequestContext.Principal.Identity.GetUserId();
                
             return new string[] { "value1", "value2" };
         }

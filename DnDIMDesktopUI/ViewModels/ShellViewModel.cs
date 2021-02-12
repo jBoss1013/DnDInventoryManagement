@@ -9,20 +9,25 @@ using DnDIMDesktopUI.Library.Model;
 
 namespace DnDIMDesktopUI.ViewModels
 {
-    public class ShellViewModel :Conductor<object>, IHandle<LogOnEvent>    
+    public class ShellViewModel :Conductor<object>, IHandle<LogOnEvent>, 
+        IHandle<RegisterUserEvent>,
+        IHandle<LogInEvent>
     {
         
         private IEventAggregator _events;
         private CharacterViewModel _characterVM;
         private ILoggedInUserModel _user;
+        private RegisterViewModel _registerUser;
+        
+      
 
-
-        public ShellViewModel( IEventAggregator events, CharacterViewModel characterVM, ILoggedInUserModel user)
+        public ShellViewModel( IEventAggregator events, CharacterViewModel characterVM, ILoggedInUserModel user,RegisterViewModel registerUser )
 
         {
             _events = events;
             _characterVM = characterVM;
             _user = user;
+            _registerUser = registerUser;
             _events.Subscribe(this);
             
             //This overrides current instaance of LoginViewModel with empty LoginViewModel
@@ -30,7 +35,7 @@ namespace DnDIMDesktopUI.ViewModels
             //Also clears the login form if it reactivates
             ActivateItem(IoC.Get<LoginViewModel>());
         }
-        
+
         public bool IsLogOutVisible 
         {
             get
@@ -108,5 +113,17 @@ namespace DnDIMDesktopUI.ViewModels
             }
             return output;
         }
+
+        public void Handle(RegisterUserEvent message)
+        {
+            ActivateItem(IoC.Get<RegisterViewModel>());
+        }
+
+        public void Handle(LogInEvent message)
+        {
+            ActivateItem(IoC.Get<LoginViewModel>());
+
+        }
+       
     }
 }

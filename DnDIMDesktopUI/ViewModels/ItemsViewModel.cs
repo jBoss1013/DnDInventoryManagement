@@ -23,7 +23,7 @@ namespace DnDIMDesktopUI.ViewModels
 			base.OnViewLoaded(view);
 			await LoadItems();
 		}
-		
+
 
 		private async Task LoadItems()
 		{
@@ -37,11 +37,11 @@ namespace DnDIMDesktopUI.ViewModels
 		public BindingList<ItemsModel> ItemList
 		{
 			get { return _itemList; }
-			set 
+			set
 			{
 				_itemList = value;
 				NotifyOfPropertyChange(() => ItemList);
-				
+
 			}
 		}
 		private ItemsModel _selectedItem;
@@ -49,8 +49,8 @@ namespace DnDIMDesktopUI.ViewModels
 		public ItemsModel SelectedItem
 		{
 			get { return _selectedItem; }
-			set 
-			{ 
+			set
+			{
 				_selectedItem = value;
 				NotifyOfPropertyChange(() => SelectedItem);
 				NotifyOfPropertyChange(() => CanAddToInventory);
@@ -64,8 +64,8 @@ namespace DnDIMDesktopUI.ViewModels
 		public string ItemListDescriptionText
 		{
 			get { return _itemListDescriptionText; }
-			set 
-			{	
+			set
+			{
 				_itemListDescriptionText = value;
 				NotifyOfPropertyChange(() => SelectedItem);
 				NotifyOfPropertyChange(() => ItemListDescriptionText);
@@ -78,36 +78,36 @@ namespace DnDIMDesktopUI.ViewModels
 		public int AddItemQuantity
 		{
 			get { return _addItemQuantity; }
-			set 
-			{ 
-				
+			set
+			{
+
 				_addItemQuantity = value;
 				NotifyOfPropertyChange(() => AddItemQuantity);
 				NotifyOfPropertyChange(() => CanAddToInventory);
 			}
 		}
 
-		public bool CanAddToInventory 
+		public bool CanAddToInventory
 		{
-			get 
+			get
 			{
-				
+
 				bool output = false;
-				if (SelectedItem!= null && AddItemQuantity >0)
+				if (SelectedItem != null && AddItemQuantity > 0)
 				{
 					output = true;
 				}
 				return output;
-			} 
+			}
 		}
 
 		public bool CanDeleteItem
 
 		{
-			get 
+			get
 			{
 				bool output = false;
-				if (SelectedItem!=null)
+				if (SelectedItem != null)
 				{
 					output = true;
 				}
@@ -122,7 +122,7 @@ namespace DnDIMDesktopUI.ViewModels
 
 		public void AddToInventory()
 		{
-			
+
 		}
 
 	}

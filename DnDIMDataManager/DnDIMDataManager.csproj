@@ -233,6 +233,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\RegisterUserController.cs" />
+    <Compile Include="Controllers\TestRegisterAddUserController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -338,6 +340,10 @@
     <ProjectReference Include="..\DnDIMDataManager.Library\DnDIMDataManager.Library.csproj">
       <Project>{B9EAD42A-2DE0-4360-8CEB-87DDCB6E8544}</Project>
       <Name>DnDIMDataManager.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DnDIMDesktopUI.Library\DnDIMDesktopUI.Library.csproj">
+      <Project>{F38AC997-1976-46FF-90A0-DE0AD766060D}</Project>
+      <Name>DnDIMDesktopUI.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
