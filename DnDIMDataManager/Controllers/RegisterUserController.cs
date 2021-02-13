@@ -1,7 +1,6 @@
 ﻿using DnDIMDataManager.Library.Models;
 using DnDIMDataManager.Library.DataAccess;
 using DnDIMDataManager.Models;
-using DnDIMDesktopUI.Library.Model;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;

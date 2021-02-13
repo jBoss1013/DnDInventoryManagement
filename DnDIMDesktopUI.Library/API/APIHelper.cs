@@ -43,7 +43,8 @@ namespace DnDIMDesktopUI.Helpers.API
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        /// <returns>On success: Type of AuthenticatedUser Model with token data for access to API Calls</returns>
+        /// <returns>On success: Type of AuthenticatedUser to Route Token to generate token data
+        /// On Fail: responsePhrase containing error message</returns>
         public async Task<AuthenticatedUser> Authenticate(string userName, string password)
         {
             var data = new FormUrlEncodedContent(new[]
@@ -67,6 +68,12 @@ namespace DnDIMDesktopUI.Helpers.API
 
             }
         }
+
+        /// <summary>
+        /// Gets and sets logged in user model with bearer token to be used across API for calls with authorization
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public async Task GetLoggedInUserInfo(string token)
         {
             //uses the passed in token for calls instead of using passwords

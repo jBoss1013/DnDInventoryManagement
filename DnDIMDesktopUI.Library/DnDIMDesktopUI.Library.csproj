@@ -51,7 +51,9 @@
     <Compile Include="API\APIHelper.cs" />
     <Compile Include="API\IAPIHelper.cs" />
     <Compile Include="API\IItemEndPoint.cs" />
+    <Compile Include="API\IRegisterUserEndPoint.cs" />
     <Compile Include="API\ItemEndPoint.cs" />
+    <Compile Include="API\RegisterUserEndPoint.cs" />
     <Compile Include="Model\AuthenticatedUser.cs" />
     <Compile Include="Model\ILoggedInUserModel.cs" />
     <Compile Include="Model\ItemsModel.cs" />

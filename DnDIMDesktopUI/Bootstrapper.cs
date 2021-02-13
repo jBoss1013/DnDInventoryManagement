@@ -29,7 +29,8 @@ namespace DnDIMDesktopUI
         protected override void Configure()
         {
             _container.Instance(_container)
-                .PerRequest<IItemEndPoint, ItemEndPoint>();
+                .PerRequest<IItemEndPoint, ItemEndPoint>()
+                .PerRequest<IRegisterUserEndPoint, RegisterUserEndPoint>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()

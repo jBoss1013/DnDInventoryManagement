@@ -1,20 +1,15 @@
-﻿using DnDIMDataManager.Models;
-using DnDIMDesktopUI.Helpers.API;
+﻿using DnDIMDesktopUI.Helpers.API;
 using DnDIMDesktopUI.Library.Model;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.ModelBinding;
 
 namespace DnDIMDesktopUI.Library.API
 {
-    public class RegisterUserEndPoint
+    public class RegisterUserEndPoint : IRegisterUserEndPoint
     {
         private IAPIHelper _apiHelper;
         public RegisterUserEndPoint(IAPIHelper apiHelper)
@@ -22,20 +17,26 @@ namespace DnDIMDesktopUI.Library.API
             _apiHelper = apiHelper;
         }
 
-        public async Task<IHttpActionResult> Register(RegisterUserModel model)
+
+        public Task PostRegisterUser(RegisterUserModel user)
         {
-           
-
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            return Ok();
+            throw new NotImplementedException();
         }
+
+        //public async Task PostRegisterUser(RegisterUserModel user)
+        //{
+        //    using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("/api/RegisterUser", user))
+        //    {
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            //response message may not be nessecary at thsi point
+        //            //may adjust if email confirmation is implemented
+        //        }
+        //        else
+        //        {
+        //            throw new Exception(response.ReasonPhrase);
+        //        }
+        //    }
+        //}
     }
 }
