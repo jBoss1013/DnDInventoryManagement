@@ -30,7 +30,9 @@ namespace DnDIMDesktopUI.Helpers.API
         /// makes one API call for the instance of the program
         /// </summary>
         private void InitializeClient()
-        {   //TODO: Notice, place localhost info in AppSettings for api to work
+        {   //TODO: Place Localhost Info into AppSettings value =""
+            //How to find localhost: right click DnDDataManager (API) and properties. Web Tab and Project URL. Copy and paste in WPF App.Config
+            //AppSettings -> value= "isnert localhost info"
             string api = ConfigurationManager.AppSettings["api"];
             _apiClient = new HttpClient();
             _apiClient.BaseAddress = new Uri(api);

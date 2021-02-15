@@ -12,7 +12,7 @@ namespace DnDIMDesktopUI.ViewModels
 {
 	public class LoginViewModel : Screen
 	{
-		
+
 		private string _userName;
 		private string _password;
 
