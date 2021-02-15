@@ -17,26 +17,20 @@ namespace DnDIMDesktopUI.Library.API
             _apiHelper = apiHelper;
         }
 
-
-        public Task PostRegisterUser(RegisterUserModel user)
+        public async Task PostRegisterUser(RegisterUserModel user)
         {
-            throw new NotImplementedException();
+            using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("/api/RegisterUser", user))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    //response message may not be nessecary at thsi point
+                    //may adjust if email confirmation is implemented
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
         }
-
-        //public async Task PostRegisterUser(RegisterUserModel user)
-        //{
-        //    using (HttpResponseMessage response = await _apiHelper.ApiClient.PostAsJsonAsync("/api/RegisterUser", user))
-        //    {
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            //response message may not be nessecary at thsi point
-        //            //may adjust if email confirmation is implemented
-        //        }
-        //        else
-        //        {
-        //            throw new Exception(response.ReasonPhrase);
-        //        }
-        //    }
-        //}
     }
 }

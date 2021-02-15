@@ -112,10 +112,10 @@ namespace DnDIMDesktopUI.ViewModels
 			get
 			{	bool output = false;
 
-				if (UserName?.Length > 0 && Email?.Length >0 && Password?.Length > 0 && ConfirmPassword?.Length >0)
-				{
-					output = true;
-				}
+				//if (UserName?.Length > 0 && Email?.Length >0 && Password?.Length > 0 && ConfirmPassword?.Length >0)
+				//{
+				//	output = true;
+				//}
 				return output;
 			}  
 		}
