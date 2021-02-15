@@ -27,6 +27,8 @@ Future Plans include:
 - It may be nessecary to run the API once and register a dummy user under the api ACCOUNT/Register for the aspnet local database to be created. 
 
 Once these changes are made, you should be able to create a new user with the UI and login to the form. 
+- needs an email 
+- password needs to be 8 characters, with at least 1 uppercase character
 
 
 
