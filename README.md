@@ -26,5 +26,7 @@ Future Plans include:
 - To do this: right click on DnDIMDataManager(API) and select properties. Go to the Web tab and find the Project URL. Copy this localhost and paste in the WPF App.config under AppSettings -> value = "". (should look like: value="http://localhost:#####/")
 - It may be nessecary to run the API once and register a dummy user under the api ACCOUNT/Register for the aspnet local database to be created. 
 
+Once these changes are made, you should be able to create a new user with the UI and login to the form. 
+
 
 
